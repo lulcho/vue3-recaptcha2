@@ -28,7 +28,12 @@
             hl: {
                 type: String,
                 required: false
-            }
+            },
+            tabindex: {
+                type: Number,
+                required: false,
+                default: 0
+            }            
         },
         emits: {
             verify: (response) => {
@@ -46,6 +51,7 @@
                     'sitekey': this.siteKey,
                     'theme': this.theme,
                     'size': this.size,
+                    'tabindex': this.tabindex,
                     'callback': (response) => this.$emit("verify", response),
                     'expired-callback': () => this.$emit("expire"),
                     'error-callback': () => this.$emit("fail")
